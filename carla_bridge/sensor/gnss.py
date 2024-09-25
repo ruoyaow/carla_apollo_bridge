@@ -127,7 +127,8 @@ class Gnss(Sensor):
         self.gnss_heading_writer.write(gnss_heading_msg)
 
         gnss_status_msg = InsStat()
-        gnss_status_msg.header.timestamp_sec = carla_gnss_measurement.timestamp
+        # gnss_status_msg.header.timestamp_sec = carla_gnss_measurement.timestamp
+        gnss_status_msg.header.timestamp_sec = now_cyber_time
         gnss_status_msg.header.module_name = "gnss"
         # gnss_status_msg.solution_completed = True
         # gnss_status_msg.solution_status = 0
